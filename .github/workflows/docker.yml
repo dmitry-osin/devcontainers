@@ -9,7 +9,6 @@ on:
   schedule:
     - cron: '37 0 * * *'
   push:
-    branches: [ "main" ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   pull_request:
@@ -38,12 +37,12 @@ jobs:
           - name: clojure
             context: .
             dockerfile: ./clojure/.devcontainer/Dockerfile
-          - name: elixir
-            context: .
-            dockerfile: ./elixir/.devcontainer/Dockerfile
           - name: scala
             context: .
             dockerfile: ./scala/.devcontainer/Dockerfile
+          - name: zig
+            context: .
+            dockerfile: ./zig/.devcontainer/Dockerfile
           - name: fasm
             context: .
             dockerfile: ./assembly/fasm/.devcontainer/Dockerfile

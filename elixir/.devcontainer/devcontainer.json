@@ -1,9 +1,6 @@
 {
-    "name": "Elixir Development Container",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "context": "."
-    },
+    "name": "Elixir Project",
+    "image": "hexpm/elixir:1.18.1-erlang-27.2-ubuntu-noble-20241015",
     "features": {
         "ghcr.io/devcontainers/features/common-utils:2": {
             "installZsh": true,
@@ -14,24 +11,13 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "jakebecker.elixir-ls",
-                "marcandre.vscode-elixir",
-                "sammkj.vscode-elixir-formatter"
-            ],
-            "settings": {
-                "editor.formatOnSave": true,
-                "elixirLS.projectDir": ".",
-                "elixirLS.fetchDeps": true,
-                "elixirLS.mixEnv": "dev"
-            }
+                "elixir-lsp.elixir-ls",
+                "phoenixframework.phoenix"
+            ]
         }
     },
     "remoteUser": "vscode",
-    "remoteEnv": {
-        "MIX_HOME": "/home/vscode/.mix",
-        "HEX_HOME": "/home/vscode/.hex"
-    },
-    "postCreateCommand": "elixir --version && mix --version && erl -version",
+    "onCreateCommand": "mix local.hex --force && mix local.rebar --force",
+    "postCreateCommand": "elixir --version && mix --version",
     "workspaceFolder": "/workspace"
 }
-

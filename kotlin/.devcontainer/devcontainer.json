@@ -1,0 +1,40 @@
+{
+    "name": "Kotlin Development Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "."
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "21",
+            "jdkDistro": "ms"
+        },
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": true,
+            "installOhMyZsh": true,
+            "upgradePackages": true
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "vscjava.vscode-gradle",
+                "fwcd.kotlin",
+                "mathiasfrohlich.Kotlin"
+            ],
+            "settings": {
+                "java.configuration.updateBuildConfiguration": "automatic",
+                "kotlin.languageServer.enabled": true
+            }
+        }
+    },
+    "remoteUser": "vscode",
+    "remoteEnv": {
+        "JAVA_HOME": "/usr/local/sdkman/candidates/java/current",
+        "SDKMAN_DIR": "/usr/local/sdkman",
+        "PATH": "${PATH}:/usr/local/sdkman/candidates/kotlin/current/bin:/usr/local/sdkman/candidates/gradle/current/bin"
+    },
+    "postCreateCommand": "bash -c 'source /usr/local/sdkman/bin/sdkman-init.sh && kotlin -version && gradle -version'",
+    "workspaceFolder": "/workspace"
+}

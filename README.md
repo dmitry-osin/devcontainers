@@ -18,7 +18,7 @@ A collection of pre-configured VS Code Dev Containers for various programming la
   ```
 - **Relative Configuration**: 
   ```
-  /clojure/.devcontainer/devcontainer.json
+  clojure/.devcontainer/devcontainer.json
   ```
 - **Features**: Clojure CLI tools, OpenJDK 17, oh-my-zsh
 - **Extensions**: Calva, Clojure
@@ -33,7 +33,7 @@ A collection of pre-configured VS Code Dev Containers for various programming la
   ```
 - **Relative Configuration**: 
   ```
-  /deno/.devcontainer/devcontainer.json
+  deno/.devcontainer/devcontainer.json
   ```
 - **Features**: Latest Deno, oh-my-zsh
 - **Extensions**: Deno extension
@@ -47,7 +47,7 @@ A collection of pre-configured VS Code Dev Containers for various programming la
   ```
 - **Relative Configuration**: 
   ```
-  /dotnet/.devcontainer/devcontainer.json
+  dotnet/.devcontainer/devcontainer.json
   ```
 - **Features**: Latest .NET SDK, oh-my-zsh
 - **Extensions**: C# Dev Kit, C# extension, .NET Runtime, Blazor WASM Companion
@@ -62,7 +62,7 @@ A collection of pre-configured VS Code Dev Containers for various programming la
   ```
 - **Relative Configuration**: 
   ```
-  /elixir/.devcontainer/devcontainer.json
+  elixir/.devcontainer/devcontainer.json
   ```
 - **Features**: Latest Elixir, Erlang/OTP, Mix package manager, Hex, Rebar, oh-my-zsh
 - **Extensions**: ElixirLS, Elixir extension, Elixir formatter
@@ -77,7 +77,7 @@ A collection of pre-configured VS Code Dev Containers for various programming la
   ```
 - **Relative Configuration**: 
   ```
-  /assembly/fasm/.devcontainer/devcontainer.json
+  assembly/fasm/.devcontainer/devcontainer.json
   ```
 - **Features**: FASM (Flat Assembler), GDB debugger, GCC compiler, build tools, oh-my-zsh
 - **Extensions**: x86-64 Assembly language support, ASM code lens, Assembly extension, C++ tools
@@ -92,7 +92,7 @@ A collection of pre-configured VS Code Dev Containers for various programming la
   ```
 - **Relative Configuration**: 
   ```
-  /go/.devcontainer/devcontainer.json
+  go/.devcontainer/devcontainer.json
   ```
 - **Features**: Latest Go, oh-my-zsh
 - **Extensions**: Go extension, Go nightly
@@ -108,7 +108,7 @@ Multiple JDK versions available:
     ```
   - **Relative Configuration**: 
     ```
-    /java/jdk8/.devcontainer/devcontainer.json
+    java/jdk8/.devcontainer/devcontainer.json
     ```
 - **JDK 11**: `java/jdk11/`
   - **Configuration**: 
@@ -117,7 +117,7 @@ Multiple JDK versions available:
     ```
   - **Relative Configuration**: 
     ```
-    /java/jdk11/.devcontainer/devcontainer.json
+    java/jdk11/.devcontainer/devcontainer.json
     ```
 - **JDK 17**: `java/jdk17/`
   - **Configuration**: 
@@ -126,7 +126,7 @@ Multiple JDK versions available:
     ```
   - **Relative Configuration**: 
     ```
-    /java/jdk17/.devcontainer/devcontainer.json
+    java/jdk17/.devcontainer/devcontainer.json
     ```
 - **JDK 21**: `java/jdk21/`
   - **Configuration**: 
@@ -135,7 +135,7 @@ Multiple JDK versions available:
     ```
   - **Relative Configuration**: 
     ```
-    /java/jdk21/.devcontainer/devcontainer.json
+    java/jdk21/.devcontainer/devcontainer.json
     ```
 
 Each includes:
@@ -145,6 +145,21 @@ Each includes:
 - Spring Boot tools
 - oh-my-zsh
 
+#### Kotlin
+- **Location**: `kotlin/`
+- **Configuration**: 
+  ```
+  https://github.com/dmitry-osin/devcontainers/blob/main/kotlin/.devcontainer/devcontainer.json
+  ```
+- **Relative Configuration**: 
+  ```
+  kotlin/.devcontainer/devcontainer.json
+  ```
+- **Features**: Kotlin, Gradle, OpenJDK 21, SDKMAN, oh-my-zsh
+- **Extensions**: Kotlin extension, Java extension pack, Gradle extension
+- **Settings**: Kotlin language server enabled, automatic build configuration
+- **Tools**: Kotlin compiler, Gradle build tool, SDKMAN package manager
+
 #### MASM (Assembly)
 - **Location**: `assembly/masm/`
 - **Configuration**: 
@@ -153,7 +168,7 @@ Each includes:
   ```
 - **Relative Configuration**: 
   ```
-  /assembly/masm/.devcontainer/devcontainer.json
+  assembly/masm/.devcontainer/devcontainer.json
   ```
 - **Features**: NASM assembler (Linux alternative to MASM), GDB debugger, build tools, oh-my-zsh
 - **Extensions**: x86-64 Assembly language support, ASM code lens, C++ tools
@@ -169,7 +184,7 @@ Each includes:
   ```
 - **Relative Configuration**: 
   ```
-  /assembly/nasm/.devcontainer/devcontainer.json
+  assembly/nasm/.devcontainer/devcontainer.json
   ```
 - **Features**: NASM assembler, GDB debugger, GCC compiler, build tools, oh-my-zsh
 - **Extensions**: x86-64 Assembly language support, ASM code lens, Assembly extension, C++ tools
@@ -184,7 +199,7 @@ Each includes:
   ```
 - **Relative Configuration**: 
   ```
-  /nodejs/.devcontainer/devcontainer.json
+  nodejs/.devcontainer/devcontainer.json
   ```
 - **Features**: Node.js LTS, npm, oh-my-zsh
 - **Extensions**: ESLint, Prettier, Tailwind CSS, TypeScript
@@ -198,7 +213,7 @@ Each includes:
   ```
 - **Relative Configuration**: 
   ```
-  /python/.devcontainer/devcontainer.json
+  python/.devcontainer/devcontainer.json
   ```
 - **Features**: Latest Python, pip, oh-my-zsh
 - **Extensions**: Python, Pylance, Black formatter, isort, Flake8, mypy
@@ -212,7 +227,7 @@ Each includes:
   ```
 - **Relative Configuration**: 
   ```
-  /ruby/.devcontainer/devcontainer.json
+  ruby/.devcontainer/devcontainer.json
   ```
 - **Features**: Latest Ruby, Bundler, Gem package manager, oh-my-zsh
 - **Extensions**: Ruby extension, Solargraph language server, RuboCop linter, rdbg debugger
@@ -227,7 +242,7 @@ Each includes:
   ```
 - **Relative Configuration**: 
   ```
-  /rust/.devcontainer/devcontainer.json
+  rust/.devcontainer/devcontainer.json
   ```
 - **Features**: Latest Rust toolchain, rust-analyzer, LLDB debugger, oh-my-zsh
 - **Extensions**: rust-analyzer, vscode-lldb, crates
@@ -240,7 +255,7 @@ Each includes:
   ```
 - **Relative Configuration**: 
   ```
-  /scala/.devcontainer/devcontainer.json
+  scala/.devcontainer/devcontainer.json
   ```
 - **Features**: Scala 3.3.1, sbt 1.9.7, Java 17, Coursier, oh-my-zsh
 - **Extensions**: Scala extension, Scala debug adapter
@@ -255,7 +270,7 @@ Each includes:
   ```
 - **Relative Configuration**: 
   ```
-  /solidity/.devcontainer/devcontainer.json
+  solidity/.devcontainer/devcontainer.json
   ```
 - **Features**: Node.js LTS, Solidity compiler (solc), Hardhat framework, oh-my-zsh
 - **Extensions**: Hardhat Solidity, Solidity extension, ESLint, Prettier
@@ -270,7 +285,7 @@ Each includes:
   ```
 - **Relative Configuration**: 
   ```
-  /zig/.devcontainer/devcontainer.json
+  zig/.devcontainer/devcontainer.json
   ```
 - **Features**: Latest Zig, oh-my-zsh
 - **Extensions**: Zig language support

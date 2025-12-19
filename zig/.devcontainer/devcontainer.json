@@ -1,10 +1,10 @@
 {
-    "name": "Zig Development Container",
-    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "name": "Zig Development",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "."
+    },
     "features": {
-        "ghcr.io/devcontainers/features/zig:1": {
-            "version": "latest"
-        },
         "ghcr.io/devcontainers/features/common-utils:2": {
             "installZsh": true,
             "installOhMyZsh": true,
@@ -15,18 +15,10 @@
         "vscode": {
             "extensions": [
                 "ziglang.vscode-zig"
-            ],
-            "settings": {
-                "zig.path": "/usr/local/bin/zig",
-                "zig.zls.path": "zls",
-                "zig.buildOnSave": false
-            }
+            ]
         }
     },
     "remoteUser": "vscode",
-    "remoteEnv": {
-        "ZIG_LOCAL_CACHE_DIR": "/workspace/.zig-cache"
-    },
     "postCreateCommand": "zig version",
     "workspaceFolder": "/workspace"
 }
