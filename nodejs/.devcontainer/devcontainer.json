@@ -1,0 +1,37 @@
+{
+    "name": "Node.js LTS Development Container",
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts"
+        },
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": true,
+            "installOhMyZsh": true,
+            "upgradePackages": true
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "bradlc.vscode-tailwindcss",
+                "ms-vscode.vscode-typescript-next"
+            ],
+            "settings": {
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "editor.codeActionsOnSave": {
+                    "source.fixAll.eslint": "explicit"
+                }
+            }
+        }
+    },
+    "remoteUser": "vscode",
+    "remoteEnv": {
+        "NVM_DIR": "/usr/local/share/nvm"
+    },
+    "postCreateCommand": "node --version && npm --version",
+    "workspaceFolder": "/workspace"
+}

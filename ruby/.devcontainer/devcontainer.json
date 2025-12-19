@@ -1,0 +1,46 @@
+{
+    "name": "Ruby Development Container",
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "features": {
+        "ghcr.io/devcontainers/features/ruby:1": {
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": true,
+            "installOhMyZsh": true,
+            "upgradePackages": true
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "rebornix.Ruby",
+                "castwide.solargraph",
+                "misogi.ruby-rubocop",
+                "koichisasada.vscode-rdbg"
+            ],
+            "settings": {
+                "editor.formatOnSave": true,
+                "ruby.useLanguageServer": true,
+                "ruby.lint": {
+                    "rubocop": {
+                        "useBundler": true
+                    }
+                },
+                "ruby.format": "rubocop",
+                "[ruby]": {
+                    "editor.defaultFormatter": "misogi.ruby-rubocop",
+                    "editor.tabSize": 2
+                }
+            }
+        }
+    },
+    "remoteUser": "vscode",
+    "remoteEnv": {
+        "GEM_HOME": "/home/vscode/.gem",
+        "GEM_PATH": "/home/vscode/.gem"
+    },
+    "postCreateCommand": "ruby --version && gem --version && bundler --version",
+    "workspaceFolder": "/workspace"
+}
+

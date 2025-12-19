@@ -1,0 +1,40 @@
+{
+    "name": "Solidity Development Container",
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts"
+        },
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": true,
+            "installOhMyZsh": true,
+            "upgradePackages": true
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "NomicFoundation.hardhat-solidity",
+                "JuanBlanco.solidity",
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode"
+            ],
+            "settings": {
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "solidity.formatter": "prettier",
+                "solidity.linter": "solhint",
+                "[solidity]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                }
+            }
+        }
+    },
+    "remoteUser": "vscode",
+    "remoteEnv": {
+        "NVM_DIR": "/usr/local/share/nvm"
+    },
+    "postCreateCommand": "npm install -g solc hardhat @nomicfoundation/hardhat-toolbox && node --version && npm --version && solc --version && hardhat --version",
+    "workspaceFolder": "/workspace"
+}
+

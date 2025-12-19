@@ -1,0 +1,35 @@
+{
+    "name": "Java 8 Development Container",
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "8",
+            "jdkDistro": "ms"
+        },
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": true,
+            "installOhMyZsh": true,
+            "upgradePackages": true
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "vscjava.vscode-gradle",
+                "vscjava.vscode-maven",
+                "vscjava.vscode-spring-boot-dashboard",
+                "vmware.vscode-boot-dev-pack"
+            ],
+            "settings": {
+                "java.configuration.updateBuildConfiguration": "automatic"
+            }
+        }
+    },
+    "remoteUser": "vscode",
+    "remoteEnv": {
+        "JAVA_HOME": "/usr/local/sdkman/candidates/java/current"
+    },
+    "postCreateCommand": "java -version && javac -version",
+    "workspaceFolder": "/workspace"
+}

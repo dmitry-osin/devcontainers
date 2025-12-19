@@ -1,0 +1,37 @@
+{
+    "name": "Elixir Development Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "."
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": true,
+            "installOhMyZsh": true,
+            "upgradePackages": true
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "jakebecker.elixir-ls",
+                "marcandre.vscode-elixir",
+                "sammkj.vscode-elixir-formatter"
+            ],
+            "settings": {
+                "editor.formatOnSave": true,
+                "elixirLS.projectDir": ".",
+                "elixirLS.fetchDeps": true,
+                "elixirLS.mixEnv": "dev"
+            }
+        }
+    },
+    "remoteUser": "vscode",
+    "remoteEnv": {
+        "MIX_HOME": "/home/vscode/.mix",
+        "HEX_HOME": "/home/vscode/.hex"
+    },
+    "postCreateCommand": "elixir --version && mix --version && erl -version",
+    "workspaceFolder": "/workspace"
+}
+

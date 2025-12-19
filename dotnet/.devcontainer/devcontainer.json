@@ -1,0 +1,46 @@
+{
+    "name": ".NET Core Development Container",
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "features": {
+        "ghcr.io/devcontainers/features/dotnet:1": {
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": true,
+            "installOhMyZsh": true,
+            "upgradePackages": true
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-dotnettools.csharp",
+                "ms-dotnettools.csdevkit",
+                "ms-dotnettools.vscode-dotnet-runtime",
+                "ms-dotnettools.blazorwasm-companion"
+            ],
+            "settings": {
+                "omnisharp.enableRoslynAnalyzers": true,
+                "omnisharp.enableEditorConfigSupport": true,
+                "omnisharp.organizeImportsOnFormat": true,
+                "editor.formatOnSave": true,
+                "editor.codeActionsOnSave": {
+                    "source.organizeImports": "explicit",
+                    "source.fixAll": "explicit"
+                },
+                "[csharp]": {
+                    "editor.defaultFormatter": "ms-dotnettools.csharp",
+                    "editor.formatOnSave": true
+                }
+            }
+        }
+    },
+    "remoteUser": "vscode",
+    "remoteEnv": {
+        "DOTNET_ROOT": "/usr/share/dotnet",
+        "PATH": "/usr/share/dotnet:${PATH}"
+    },
+    "postCreateCommand": "dotnet --version && dotnet --info",
+    "workspaceFolder": "/workspace"
+}
+

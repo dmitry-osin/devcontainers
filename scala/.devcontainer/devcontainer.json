@@ -1,0 +1,38 @@
+{
+    "name": "Scala Development Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "."
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "17",
+            "jdkDistro": "ms"
+        },
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": true,
+            "installOhMyZsh": true,
+            "upgradePackages": true
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "scala-lang.scala",
+                "scala-lang.scala-debug-adapter"
+            ],
+            "settings": {
+                "scala.server.enabled": true,
+                "scala.server.javaHome": "/usr/local/sdkman/candidates/java/current"
+            }
+        }
+    },
+    "remoteUser": "vscode",
+    "remoteEnv": {
+        "JAVA_HOME": "/usr/local/sdkman/candidates/java/current",
+        "SCALA_HOME": "/root/.local/share/coursier/bin",
+        "PATH": "${PATH}:/root/.local/share/coursier/bin"
+    },
+    "postCreateCommand": "scala --version && sbt --version",
+    "workspaceFolder": "/workspace"
+}

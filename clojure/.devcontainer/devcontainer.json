@@ -1,0 +1,38 @@
+{
+	"name": "Clojure Development Container",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "."
+	},
+	
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"installOhMyZsh": true,
+			"upgradePackages": true
+		}
+	},
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"betterthantomorrow.calva",
+				"avli.clojure"
+			],
+			"settings": {
+				"calva.replConnectSequences": [],
+				"calva.formatOnSave": true
+			}
+		}
+	},
+
+	"remoteUser": "vscode",
+	"remoteEnv": {
+		"CLOJURE_HOME": "/usr/local/lib/clojure"
+	},
+
+	"postCreateCommand": "clojure --version && java -version",
+
+	"workspaceFolder": "/workspace"
+}
+

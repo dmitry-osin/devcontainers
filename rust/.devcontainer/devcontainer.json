@@ -1,0 +1,33 @@
+{
+    "name": "Rust Development Container",
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "features": {
+        "ghcr.io/devcontainers/features/rust:1": {
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": true,
+            "installOhMyZsh": true,
+            "upgradePackages": true
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "rust-lang.rust-analyzer",
+                "vadimcn.vscode-lldb",
+                "serayuzgur.crates"
+            ],
+            "settings": {
+                "rust-analyzer.checkOnSave.command": "clippy"
+            }
+        }
+    },
+    "remoteUser": "vscode",
+    "remoteEnv": {
+        "CARGO_HOME": "/usr/local/cargo",
+        "RUSTUP_HOME": "/usr/local/rustup"
+    },
+    "postCreateCommand": "rustc --version && cargo --version",
+    "workspaceFolder": "/workspace"
+}
