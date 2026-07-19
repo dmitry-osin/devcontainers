@@ -78,6 +78,20 @@ jobs:
           mkdir -p $HOME/.docker
           cp -r ~/.docker/* $HOME/.docker/ 2>/dev/null || true
 
+      - name: Pre-pull shared devcontainer base image
+        run: |
+          for attempt in 1 2 3 4 5; do
+            if docker pull mcr.microsoft.com/devcontainers/base:debian; then
+              exit 0
+            fi
+
+            if [ "$attempt" -eq 5 ]; then
+              exit 1
+            fi
+
+            sleep $((attempt * 5))
+          done
+
       # Extract metadata for Docker tags
       - name: Extract Docker metadata
         id: meta
@@ -137,4 +151,3 @@ jobs:
           if [ -n "$DIGEST" ] && [ "$DIGEST" != "null" ]; then
             echo "$TAGS" | xargs -I {} cosign sign --yes {}@$DIGEST
           fi
-
